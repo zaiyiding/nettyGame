@@ -5,6 +5,7 @@ import java.nio.ByteOrder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.message.MessageClientDisconnect;
 import com.message.MessageDecoder;
 import com.message.MessageEncoder;
 import com.message.MessageLengthFieldFrameDecoder;
@@ -69,6 +70,7 @@ public class NettyServer implements Runnable{
 			                                     //.addLast("decoder", new MessageDecoder())
 			                                     //.addFirst(new LineBasedFrameDecoder(65535))
                                     			 //.addLast(new MessageHandler());
+                                    			 .addFirst(new MessageClientDisconnect())
                                     			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
                                     			 .addLast(new MessageLengthFieldFrameHandler());
                                 }  
