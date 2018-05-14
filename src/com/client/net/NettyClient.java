@@ -64,6 +64,7 @@ public class NettyClient implements Runnable {
 				e.printStackTrace();
 			} finally {
 				
+				
 			}
 			}
 	
