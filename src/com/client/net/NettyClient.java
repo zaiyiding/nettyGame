@@ -9,7 +9,6 @@ import com.message.MessageClientConnectEvent;
 import com.message.MessageEncoder;
 import com.message.MessageLengthFieldFrameDecoder;
 import com.message.MessageLengthFieldFrameHandler;
-import com.server.net.NettyServer;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -62,9 +61,8 @@ public class NettyClient implements Runnable {
 
 			} catch (InterruptedException e) {// ¡¥Ω” ß∞‹
 				e.printStackTrace();
-			} finally {
-				
-				
+			} finally {				
+				group.shutdownGracefully();
 			}
 			}
 	

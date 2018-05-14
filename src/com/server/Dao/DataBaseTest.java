@@ -6,11 +6,10 @@ import java.sql.SQLException;
 
 public class DataBaseTest {
 	
-	public static void main(String[] args) {        
-	        Connection c = null;
-	        try {
+	public static void main(String[] args) {   
+	        try { 
 	            Class.forName("org.sqlite.JDBC");
-	            c= DriverManager.getConnection("jdbc:sqlite:test.db");
+	            Connection c = DriverManager.getConnection("jdbc:sqlite:test.db");
 	
 	        } catch (ClassNotFoundException e) {
 	            e.printStackTrace();

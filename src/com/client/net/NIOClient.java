@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.io.OutputStream;  
 import java.net.Socket;
 import java.nio.ByteOrder;
-import java.util.Arrays;
-import java.util.Scanner;
 
 import com.message.Message;
-import com.sun.corba.se.impl.ior.ByteBuffer;  
   
 public class NIOClient {  
 	public static int count = 0;
