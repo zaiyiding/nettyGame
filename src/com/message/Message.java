@@ -34,8 +34,8 @@ public class Message {
 	 public byte[] toByte() throws IOException {  
 	        ByteArrayOutputStream out = new ByteArrayOutputStream();  	        
 	        out.write(Tools.intToByte2(size));  
-	        out.write(Tools.intToByte2(id)); 
-	        byte[] bodyBytes = body.getBytes(Charset.forName("utf-8"));  
+	        out.write(Tools.intToByte2(id));
+	        byte[] bodyBytes = body.getBytes();  
 	        out.write(bodyBytes);
 	        byte[] tmpByte = out.toByteArray();
 	        System.out.println("toByte(): " + tmpByte.length);

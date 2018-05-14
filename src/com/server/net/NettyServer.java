@@ -5,7 +5,7 @@ import java.nio.ByteOrder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.message.MessageClientDisconnect;
+import com.message.MessageClientConnectEvent;
 import com.message.MessageDecoder;
 import com.message.MessageEncoder;
 import com.message.MessageLengthFieldFrameDecoder;
@@ -61,22 +61,22 @@ public class NettyServer implements Runnable{
         ByteBuf heapBuffer = Unpooled.buffer(8);  
         heapBuffer.writeBytes("\r".getBytes());  
         try {  
-            ServerBootstrap b = new ServerBootstrap(); // (2)  
-            b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class) // (3)  
-                    .childHandler(new ChannelInitializer<SocketChannel>() { // (4)  
+            ServerBootstrap b = new ServerBootstrap();
+            b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class) 
+                    .childHandler(new ChannelInitializer<SocketChannel>() {  
                                 @Override  
                                 public void initChannel(SocketChannel ch) throws Exception {  
                                     ch.pipeline()//.addLast("encoder", new MessageEncoder())
 			                                     //.addLast("decoder", new MessageDecoder())
 			                                     //.addFirst(new LineBasedFrameDecoder(65535))
                                     			 //.addLast(new MessageHandler());
-                                    			 .addFirst(new MessageClientDisconnect())
+                                    			 .addFirst(new MessageClientConnectEvent())
                                     			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
                                     			 .addLast(new MessageLengthFieldFrameHandler());
                                 }  
-                            }).option(ChannelOption.SO_BACKLOG, 1024) // (5)  
-                    .childOption(ChannelOption.SO_KEEPALIVE, true); // (6)  
-            ChannelFuture f = b.bind(port).sync(); // (7)  
+                            }).option(ChannelOption.SO_BACKLOG, 1024) 
+                    .childOption(ChannelOption.SO_KEEPALIVE, true); 
+            ChannelFuture f = b.bind(port).sync(); 
             
             //System.out.println("server ByteOrder" + ByteOrder.nativeOrder()); 
             f.channel().closeFuture().sync();  
@@ -96,12 +96,9 @@ public class NettyServer implements Runnable{
     
     public static void main(String[] args) {
     	  
-    		ExecutorService exec = Executors.newCachedThreadPool();
-   		
+    		ExecutorService exec = Executors.newCachedThreadPool(); 		
     		// ≥ı ºªØnetty
-    		System.out.println("server start : 1");
     		exec.execute(new NettyServer(12345));
-    		System.out.println("server start : 2");
         
     	
     }
