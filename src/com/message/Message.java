@@ -39,8 +39,8 @@ public class Message {
 	        System.out.println("toByte(): " + tmpByte.length);
 	        return out.toByteArray();        
 	 }
-	
-	 public String ToString() throws UnsupportedEncodingException, IOException {
+	 @Override
+	 public String toString() {
 		 String tmpString;
 		 tmpString = "size " + size + " id "+ id + " string :" + body; 
 		 return tmpString;

@@ -17,7 +17,7 @@ public class MessageHandler extends ChannelInboundHandlerAdapter  {
 			
 			Message tmpms = (Message)msg ; 
 			
-			System.out.println("MessageHandler:" + tmpms.ToString()); 
+			System.out.println("MessageHandler:" + tmpms.toString()); 
         } finally {
             ReferenceCountUtil.release(msg);
         }

@@ -31,6 +31,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class NettyServer implements Runnable{  
   
     private int port=12345;  
+    private volatile boolean stop = false;
     /*
      *1）LENGTH_FIELD_LENGTH指的就是我们这边CustomMsg中length这个属性的大小，我们这边是int型，所以是4
       2）LENGTH_FIELD_OFFSET指的就是我们这边length字段的起始位置，因为前面有type和flag两个属性，
@@ -83,12 +84,22 @@ public class NettyServer implements Runnable{
             workerGroup.shutdownGracefully();  
             bossGroup.shutdownGracefully();  
         }  
+        
+        if(stop) {
+        	workerGroup.shutdownGracefully();  
+            bossGroup.shutdownGracefully();  
+        }
+        
     }  
       
     public void start(int port) throws InterruptedException{  
       this.port=port;  
       this.run();  
     }  
+    
+    public void stop(){
+    	stop = true;    	
+    }
     
     public static void main(String[] args) {
     	  

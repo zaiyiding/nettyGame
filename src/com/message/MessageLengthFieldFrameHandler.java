@@ -10,7 +10,7 @@ public class MessageLengthFieldFrameHandler extends SimpleChannelInboundHandler<
 		// TODO Auto-generated method stub
 		 if(msg instanceof Message) {  
 			 Message customMsg = (Message)msg;  
-	            System.out.println("MessageLengthFieldFrameHandler :"+ customMsg.ToString());  
+	            System.out.println("MessageLengthFieldFrameHandler :"+ customMsg.toString());  
 	        } 		
 	}
 
