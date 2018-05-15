@@ -2,9 +2,9 @@ package com.test;
 
 import com.message.Message;
 
-public class maintest {
 
-		public static void main(String[] args){	        
+public class maintest {
+	public static void main(String[] args){	        
 			System.out.println("hello world");
 	    }	
 		
