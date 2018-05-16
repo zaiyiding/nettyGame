@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/proto/protoJava</name>
+			<type>2</type>
+			<location>E:/javapro/famlilyStar/src/com/proto/protoJava</location>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -9,8 +9,8 @@ import com.test.maintest;
   
 public class ActionMapUtil {  
   
-    private static Map<Integer, Method> map = new HashMap<Integer, Method>();  
-    public static Object invoteWithStatic(Integer key, Object... args) throws Exception {  
+    private Map<Integer, Method> map = new HashMap<Integer, Method>();  
+    public Object invoteWithStatic(Integer key, Object... args) throws Exception {  
     	Method action = map.get(key);  
         if (action != null) {  
             try {  
@@ -23,7 +23,7 @@ public class ActionMapUtil {
     }  
   
     
-    public static Object invoteWithObject(Object callObj, Integer key, Object... args) throws Exception {  
+    public Object invoteWithObject(Object callObj, Integer key, Object... args) throws Exception {  
     	Method action = map.get(key);  
         if (action != null) {  
             try {  

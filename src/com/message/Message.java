@@ -2,9 +2,10 @@ package com.message;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 import com.tool.Tools;
+
+import io.netty.channel.Channel;
 public class Message {
 	//判断传送客户端传送过来的数据是否按照协议传输，头部信息的大小应该是int +int = 4 + 4 = 6  
     private static final int HEADER_SIZE = 8;  
@@ -18,7 +19,13 @@ public class Message {
     private int id;        
   
     private String body;  
-	
+    
+    private Channel channel;
+    
+    public void setChannel(Channel input) {
+    	channel = input;
+    }
+	    
 	public Message(int idInput, String strinput) {
 		id     = idInput;
 		body   = strinput;		
