@@ -1,6 +1,6 @@
 package com.queue;
 
-import com.message.Message;
+import com.server.netty.message.Message;
 
 public class MessageQueue extends BaseQueue<Message> {
 	private static final MessageQueue INSTANCE = new MessageQueue();

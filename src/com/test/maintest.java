@@ -1,6 +1,6 @@
 package com.test;
 
-import com.message.Message;
+import com.server.netty.message.Message;
 
 public class maintest {
 	public static void main(String[] args){	        

@@ -4,11 +4,13 @@ import java.nio.ByteOrder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.message.Message;
-import com.message.MessageClientConnectEvent;
-import com.message.MessageEncoder;
-import com.message.MessageLengthFieldFrameDecoder;
-import com.message.MessageLengthFieldFrameHandler;
+import com.command.clientCommand;
+import com.protobuff.message.ClientToServer.client_to_server_register;
+import com.server.netty.message.Message;
+import com.server.netty.message.MessageClientConnectEvent;
+import com.server.netty.message.MessageEncoder;
+import com.server.netty.message.MessageLengthFieldFrameDecoder;
+import com.server.netty.message.MessageLengthFieldFrameHandler;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -31,6 +33,16 @@ public class NettyClient implements Runnable {
     private static final int LENGTH_ADJUSTMENT = 0;  
     private static final int INITIAL_BYTES_TO_STRIP = 0; 
     
+    private static NettyClient instance = new NettyClient();
+    
+    static public synchronized NettyClient  Instance() {
+    	return instance;
+    }
+    
+    private NettyClient() {
+    	
+    }
+    
 	public void run() {
 			EventLoopGroup group = new NioEventLoopGroup();
 			try {
@@ -47,7 +59,7 @@ public class NettyClient implements Runnable {
                                     			 .addLast(new MessageEncoder());
                                 }  
 								
-							});// 这里为了简便直接使用内部类
+							}) .option(ChannelOption.SO_KEEPALIVE, true); ;// 这里为了简便直接使用内部类
 
 				// Start the client.
 				ChannelFuture f = b.connect(host, port).sync();
@@ -55,31 +67,35 @@ public class NettyClient implements Runnable {
 				if (f.isDone()) {
 					System.out.println("连接成功");				
 					//test :
-					//Message testMsg = new Message(1,"333333");
-					//sendMsg(testMsg);
+					client_to_server_register tmpMessage = client_to_server_register
+							.newBuilder().setAccount("test1").setPassword("passwd1").build();
+					
+					Message test1 = new Message(1, tmpMessage.toByteArray());					
+					sendMsg(test1);
 				}
 
 			} catch (InterruptedException e) {// 链接失败
 				e.printStackTrace();
-			} finally {				
-				group.shutdownGracefully();
+			} finally {			
+				//System.out.println("Client shutdownGracefully:\t");
+				//group.shutdownGracefully();
 			}
-			}
+	}
 	
 	
-	public void sendMsg(Message msgEntity) {
+	public void sendMsg(Object msgEntity) {
 		sendchannel.writeAndFlush(msgEntity);
-		//System.out.println("发送数据成功,命令码:\t" + msgEntity.toByte());
+		System.out.println("Client 发送数据成功,命令码:\t" + msgEntity.toString());
 	}
 	
 	 public static void main(String[] args) {
    	  
  		ExecutorService exec = Executors.newCachedThreadPool(); 		
  		// 初始化netty
- 		NettyClient test1 = new NettyClient();
- 		exec.execute(test1);
- 			
- }
+ 		//NettyClient test1 = new NettyClient();
+ 		exec.execute(NettyClient.Instance());			
+ 		exec.execute(clientCommand.Instance());	
+	 }
 	
 }
 

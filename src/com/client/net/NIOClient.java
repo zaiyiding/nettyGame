@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.ByteOrder;
 
-import com.message.Message;
+import com.server.netty.message.Message;
   
 public class NIOClient {  
 	public static int count = 0;
@@ -26,7 +26,7 @@ public class NIOClient {
 	                    int ntmpCount = count +10;
 	                    String tmpStrign = "test count:"+count*10;
 	                    System.out.println("tmpStrign " + tmpStrign.length()); 
-	                    Message message = new Message(ntmpCount , tmpStrign);  
+	                    Message message = new Message(ntmpCount , tmpStrign.getBytes());  
 	                    out.write(message.toByte()); 
 	                    //out.write('\n');  
 	                    out.flush();  

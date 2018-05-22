@@ -1,13 +1,11 @@
 package com.server.handle;
 
-import com.message.Message;
-
+import com.server.managers.messageManager;
+import com.server.netty.message.Message;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;  
-
-///https://blog.csdn.net/u010853261/article/details/55803933
 
 public class MessageHandler extends ChannelInboundHandlerAdapter  {
 	
@@ -16,7 +14,7 @@ public class MessageHandler extends ChannelInboundHandlerAdapter  {
 		try {
 			
 			Message tmpms = (Message)msg ; 
-			
+			messageManager.getInstance().invokeMap(tmpms);
 			System.out.println("MessageHandler:" + tmpms.toString()); 
         } finally {
             ReferenceCountUtil.release(msg);

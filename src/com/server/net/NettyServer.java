@@ -2,12 +2,10 @@ package com.server.net;
 //import org.springframework.stereotype.Component;  
 
 import java.nio.ByteOrder;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-import com.message.MessageClientConnectEvent;
-import com.message.MessageLengthFieldFrameDecoder;
-import com.message.MessageLengthFieldFrameHandler;
+import com.server.netty.message.MessageClientConnectEvent;
+import com.server.netty.message.MessageLengthFieldFrameDecoder;
+import com.server.netty.message.MessageLengthFieldFrameHandler;
 
 import io.netty.bootstrap.ServerBootstrap;  
 import io.netty.buffer.ByteBuf;  
@@ -81,8 +79,9 @@ public class NettyServer implements Runnable{
         } catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {  
-            workerGroup.shutdownGracefully();  
-            bossGroup.shutdownGracefully();  
+			//System.out.println("Server shutdownGracefully:\t");
+            //workerGroup.shutdownGracefully();  
+            //bossGroup.shutdownGracefully();  
         }  
         
         if(stop) {
@@ -99,15 +98,6 @@ public class NettyServer implements Runnable{
     
     public void stop(){
     	stop = true;    	
-    }
-    
-    public static void main(String[] args) {
-    	  
-    		ExecutorService exec = Executors.newCachedThreadPool(); 		
-    		// ≥ı ºªØnetty
-    		exec.execute(new NettyServer(12345));
-        
-    	
     }
   
 }  
