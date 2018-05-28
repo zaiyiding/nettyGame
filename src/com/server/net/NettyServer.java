@@ -3,7 +3,8 @@ package com.server.net;
 
 import java.nio.ByteOrder;
 
-import com.server.netty.message.MessageClientConnectEvent;
+import com.server.netty.message.MessageConnectEvent;
+import com.server.netty.message.MessageEncoder;
 import com.server.netty.message.MessageLengthFieldFrameDecoder;
 import com.server.netty.message.MessageLengthFieldFrameHandler;
 
@@ -65,9 +66,11 @@ public class NettyServer implements Runnable{
 			                                     //.addLast("decoder", new MessageDecoder())
 			                                     //.addFirst(new LineBasedFrameDecoder(65535))
                                     			 //.addLast(new MessageHandler());
-                                    			 .addFirst(new MessageClientConnectEvent())
+                                    			 .addFirst(new MessageConnectEvent("server"))
                                     			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
-                                    			 .addLast(new MessageLengthFieldFrameHandler());
+                                    			 .addLast(new MessageLengthFieldFrameHandler())
+                                    			 .addLast(new MessageEncoder());
+                                    
                                 }  
                             }).option(ChannelOption.SO_BACKLOG, 1024) 
                     .childOption(ChannelOption.SO_KEEPALIVE, true); 

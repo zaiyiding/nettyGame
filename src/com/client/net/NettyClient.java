@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import com.command.clientCommand;
 import com.protobuff.message.ClientToServer.client_to_server_register;
 import com.server.netty.message.Message;
-import com.server.netty.message.MessageClientConnectEvent;
+import com.server.netty.message.MessageConnectEvent;
 import com.server.netty.message.MessageEncoder;
 import com.server.netty.message.MessageLengthFieldFrameDecoder;
 import com.server.netty.message.MessageLengthFieldFrameHandler;
@@ -53,7 +53,7 @@ public class NettyClient implements Runnable {
 							.option(ChannelOption.TCP_NODELAY, true)
 							.handler(new ChannelInitializer<SocketChannel>() {
 								public void initChannel(SocketChannel ch) throws Exception {  
-                                    ch.pipeline().addFirst(new MessageClientConnectEvent())
+                                    ch.pipeline().addFirst(new MessageConnectEvent("client"))
                                     			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
                                     			 .addLast(new MessageLengthFieldFrameHandler())
                                     			 .addLast(new MessageEncoder());
@@ -88,14 +88,14 @@ public class NettyClient implements Runnable {
 		System.out.println("Client 发送数据成功,命令码:\t" + msgEntity.toString());
 	}
 	
-	 public static void main(String[] args) {
+	 /*public static void main(String[] args) {
    	  
  		ExecutorService exec = Executors.newCachedThreadPool(); 		
  		// 初始化netty
  		//NettyClient test1 = new NettyClient();
  		exec.execute(NettyClient.Instance());			
  		exec.execute(clientCommand.Instance());	
-	 }
+	 }*/
 	
 }
 

@@ -26,7 +26,7 @@ public class messageManager implements initAndEndObersver, runObersver
 	
 	public void invokeMap(Message inputMsg)  {
 		try {
-			myMap.invoteWithStatic(inputMsg.getid(), inputMsg.getBody());
+			myMap.invoteWithStatic(inputMsg.getid(), inputMsg);
 		}
 		catch (Exception e){
 			e.printStackTrace();
@@ -74,5 +74,7 @@ public class messageManager implements initAndEndObersver, runObersver
 	public void run() {
 		runStep();		
 	}
+	
+	
 	
 }

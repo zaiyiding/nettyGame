@@ -17,5 +17,10 @@ public class MessageLengthFieldFrameHandler extends SimpleChannelInboundHandler<
 	            System.out.println("MessageLengthFieldFrameHandler :"+ customMsg.toString());  
 	        } 		
 	}
+	@Override  
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {  
+		System.out.println("Unexpected exception from downstream." + cause.toString());  
+        ctx.close();  
+    } 
 
 }

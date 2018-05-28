@@ -1,4 +1,4 @@
-package com.server.main;
+package com.main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -9,7 +9,7 @@ import com.server.managers.loginManager;
 import com.server.managers.messageManager;
 import com.server.net.NettyServer;
 
-public class mainApp {
+public class mainServerApp {
     public static void main(String[] args) {
     	eventMangerInit();
 		ExecutorService exec = Executors.newCachedThreadPool(); 		

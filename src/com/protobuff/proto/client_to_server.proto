@@ -5,3 +5,9 @@ message client_to_server_register {
     string account = 2;
 	string password = 3;
 }
+
+message client_to_server_register_respone {
+    int64  id = 1;
+    string account = 2;
+	int32  errorCode = 3;
+}
