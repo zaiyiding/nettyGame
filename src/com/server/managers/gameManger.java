@@ -13,7 +13,7 @@ public class gameManger {
 	private static final gameManger instance = new gameManger();
 	private List<initAndEndObersver> myObervser = new LinkedList<initAndEndObersver>();
 	private List<runObersver> myRunObervser = new LinkedList<runObersver>();
-	private boolean  runFlag = true; 
+	private volatile boolean  runFlag = true; 
 	
 	private gameManger() {
 		

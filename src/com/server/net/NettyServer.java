@@ -27,10 +27,13 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @version 1.0 
  */  
  
-public class NettyServer implements Runnable{  
+public class nettyServer implements Runnable{  
   
     private int port=12345;  
     private volatile boolean stop = false;
+    static private nettyServer instance = new nettyServer(); 
+    EventLoopGroup bossGroup;
+    EventLoopGroup workerGroup;
     /*
      *1）LENGTH_FIELD_LENGTH指的就是我们这边CustomMsg中length这个属性的大小，我们这边是int型，所以是4
       2）LENGTH_FIELD_OFFSET指的就是我们这边length字段的起始位置，因为前面有type和flag两个属性，
@@ -47,13 +50,21 @@ public class NettyServer implements Runnable{
     private static final int LENGTH_ADJUSTMENT = 0;  
     private static final int INITIAL_BYTES_TO_STRIP = 0;  
   
-    public NettyServer(int inputPort) {
-    	super();
+    private nettyServer() {
+    	super(); 	
+    }
+    
+    public void setPort(int inputPort) {
     	this.port = inputPort;
     }
+    
+    static public nettyServer Instance() {
+    	return instance;
+    }
+    
     public void run()  {  
-        EventLoopGroup bossGroup = new NioEventLoopGroup();  
-        EventLoopGroup workerGroup = new NioEventLoopGroup();  
+        bossGroup = new NioEventLoopGroup();  
+        workerGroup = new NioEventLoopGroup();  
         ByteBuf heapBuffer = Unpooled.buffer(8);  
         heapBuffer.writeBytes("\r".getBytes());  
         try {  
@@ -62,11 +73,7 @@ public class NettyServer implements Runnable{
                     .childHandler(new ChannelInitializer<SocketChannel>() {  
                                 @Override  
                                 public void initChannel(SocketChannel ch) throws Exception {  
-                                    ch.pipeline()//.addLast("encoder", new MessageEncoder())
-			                                     //.addLast("decoder", new MessageDecoder())
-			                                     //.addFirst(new LineBasedFrameDecoder(65535))
-                                    			 //.addLast(new MessageHandler());
-                                    			 .addFirst(new MessageConnectEvent("server"))
+                                    ch.pipeline().addFirst(new MessageConnectEvent("server"))
                                     			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
                                     			 .addLast(new MessageLengthFieldFrameHandler())
                                     			 .addLast(new MessageEncoder());
@@ -83,13 +90,14 @@ public class NettyServer implements Runnable{
 			e.printStackTrace();
 		} finally {  
 			//System.out.println("Server shutdownGracefully:\t");
-            //workerGroup.shutdownGracefully();  
-            //bossGroup.shutdownGracefully();  
+            workerGroup.shutdownGracefully();  
+            bossGroup.shutdownGracefully();  
         }  
         
-        if(stop) {
-        	workerGroup.shutdownGracefully();  
-            bossGroup.shutdownGracefully();  
+        if(stop) {      	
+        	System.out.println("stop = true");
+        	//workerGroup.shutdownGracefully();  
+            //bossGroup.shutdownGracefully();  
         }
         
     }  
@@ -99,8 +107,11 @@ public class NettyServer implements Runnable{
       this.run();  
     }  
     
-    public void stop(){
-    	stop = true;    	
+    public synchronized void stop(){
+    	stop = true;
+    	workerGroup.shutdownGracefully();  
+        bossGroup.shutdownGracefully();   
+        System.out.println("Server shutdownGracefully:\t");
     }
   
 }  

@@ -1,5 +1,7 @@
 package com.server.netty.message;
 
+import com.server.managers.serverPlayerManager;
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -23,6 +25,7 @@ public class MessageConnectEvent extends ChannelInboundHandlerAdapter{
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         super.channelInactive(ctx);
         System.out.println("client out ip" + ctx.channel().remoteAddress().toString() + " type : " + apptype);
+        serverPlayerManager.Instance().OnPlayerOffline(ctx.channel());
 	}
 	
 	@Override

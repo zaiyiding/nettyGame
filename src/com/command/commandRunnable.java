@@ -11,6 +11,8 @@ import com.action.ActionCell;
 public class commandRunnable implements Runnable{
 	
 	private Map<String, ActionCell>  map = new HashMap<String, ActionCell>();
+
+	private boolean  flag = true;
 	
 	public void addCommand(String cmd, ActionCell input) {
 		map.put(cmd, input);		
@@ -25,24 +27,32 @@ public class commandRunnable implements Runnable{
 		}
 	}
 	
+	
 	@Override
-	public void run() {
-		 	InputStreamReader is = new InputStreamReader(System.in); //new构造InputStreamReader对象   
-		    BufferedReader br = new BufferedReader(is); //拿构造的方法传到BufferedReader中   
+	public void run() {	 	  
+		
+		while(flag) {
 		    try{ //该方法中有个IOExcepiton需要捕获   
-		      String name = br.readLine();   
-		      //System.out.println("ReadTest Output:" + name);
-		      clientCommand.Instance().excute(name);
-		    }   
-		    catch(IOException e){   
-		      e.printStackTrace();   
-		    }  		
+			    InputStreamReader is = new InputStreamReader(System.in); //new构造InputStreamReader对象   
+			    BufferedReader br = new BufferedReader(is); //拿构造的方法传到BufferedReader中 
+			    String name = br.readLine();   
+			    //System.out.println("ReadTest Output:" + name);
+			    this.excute(name);
+			    }   
+			    catch(IOException e){   
+			      e.printStackTrace();   
+			    }  		
 		    try {
 				TimeUnit.MILLISECONDS.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	public void stop() {
+		flag = false;
 	}
 	
 	

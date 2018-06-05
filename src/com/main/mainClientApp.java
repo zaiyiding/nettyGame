@@ -19,7 +19,7 @@ public class mainClientApp {
 	 		exec.execute(NettyClient.Instance());			
 	 		exec.execute(clientCommand.Instance());  		
 			gameManger.getInstance().noticeInit();	
-			System.out.println("start...............");
+			System.out.println("client start...............");
 			while(true) {			
 				try {
 					gameManger.getInstance().run();

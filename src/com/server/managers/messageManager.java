@@ -6,6 +6,7 @@ import com.action.ActionCell;
 import com.action.ActionMapUtil;
 import com.queue.MessageQueue;
 import com.server.netty.message.Message;
+import com.server.player.serverPlayer;
 
 public class messageManager implements initAndEndObersver, runObersver
 {
@@ -26,7 +27,8 @@ public class messageManager implements initAndEndObersver, runObersver
 	
 	public void invokeMap(Message inputMsg)  {
 		try {
-			myMap.invoteWithStatic(inputMsg.getid(), inputMsg);
+			serverPlayer tmpPlayer = serverPlayerManager.Instance().getPlayerByChannel(inputMsg.getChannel());
+			myMap.invoteWithStatic(inputMsg.getid(), inputMsg, tmpPlayer);
 		}
 		catch (Exception e){
 			e.printStackTrace();

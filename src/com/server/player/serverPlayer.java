@@ -1,11 +1,14 @@
 package com.server.player;
 
+import com.protobuff.message.messageId;
+import com.server.netty.message.Message;
+
 import io.netty.channel.Channel;
 
 public class serverPlayer {
 	private long id;
 	private String name;
-	private Channel channel;
+	private Channel channel = null;
 	private String account;
 	public long getId() {
 		return id;
@@ -31,5 +34,14 @@ public class serverPlayer {
 	public void setChannel(Channel channel) {
 		this.channel = channel;
 	}
+	public void SendMessages(Object input) {
+		if(null != channel) {
+			channel.writeAndFlush(input);
+		}
+	}
 	
+	public void SendMessages(int idInput, byte[] byteInput) {
+		Message tmpRes = new Message(messageId._client_to_server_register_respone, byteInput);		
+		SendMessages(tmpRes);
+	}
 }

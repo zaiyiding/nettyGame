@@ -50,6 +50,16 @@ public class serverPlayerManager {
 		return null;
 	}
 	
+	public void OnPlayerOffline(Channel input) {
+		serverPlayer tmpPlayer = serverPlayerManager.Instance().getPlayerByChannel(input);
+		if (null == tmpPlayer) {
+			return;
+		}
+		
+		System.out.println("player " + tmpPlayer.getAccount() + "off line");
+		// todo: Êý¾Ý¿â´æ´¢
+	}
+	
 	
 	
 }

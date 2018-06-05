@@ -39,19 +39,19 @@ public class loginManager implements initAndEndObersver{
 			tmpPlayer.setAccount(msg.getAccount());
 			serverPlayerManager.Instance().addPlayer(tmpPlayer);		
 			loginError = 0;
+			System.out.println(tmpPlayer.getAccount() + "login success");
 		}else {
 			loginError = 1;
 		}
 		
-		
 		client_to_server_register_respone tmpRespone = client_to_server_register_respone.newBuilder().setErrorCode(loginError).setAccount(msg.getAccount()).build();
 		Message tmpRes = new Message(messageId._client_to_server_register_respone, tmpRespone.toByteArray());
-		
+				
 		msgInput.getChannel().writeAndFlush(tmpRes);
 		System.out.println("responeClientResigter: sended respone");
-		if(loginError >= 0) {			
-			// 需要测试
-			//msgInput.getChannel().close();
+		if(loginError > 0) {			
+			// 可以一个函数内发+关.
+			msgInput.getChannel().close();
 		}
 		
 	}
