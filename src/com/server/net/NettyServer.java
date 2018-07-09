@@ -3,10 +3,12 @@ package com.server.net;
 
 import java.nio.ByteOrder;
 
-import com.server.netty.message.MessageConnectEvent;
-import com.server.netty.message.MessageEncoder;
-import com.server.netty.message.MessageLengthFieldFrameDecoder;
-import com.server.netty.message.MessageLengthFieldFrameHandler;
+import com.server.managers.gameManger;
+import com.server.managers.initAndEndObersver;
+import com.server.netty.message.messageConnectEvent;
+import com.server.netty.message.messageEncoder;
+import com.server.netty.message.messageLengthFieldFrameDecoder;
+import com.server.netty.message.messageLengthFieldFrameHandler;
 
 import io.netty.bootstrap.ServerBootstrap;  
 import io.netty.buffer.ByteBuf;  
@@ -27,7 +29,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @version 1.0 
  */  
  
-public class nettyServer implements Runnable{  
+public class nettyServer implements Runnable, initAndEndObersver{  
   
     private int port=12345;  
     private volatile boolean stop = false;
@@ -51,14 +53,15 @@ public class nettyServer implements Runnable{
     private static final int INITIAL_BYTES_TO_STRIP = 0;  
   
     private nettyServer() {
-    	super(); 	
+    	gameManger.getInstance().addInitAndEndObserver(this);
+    		
     }
     
     public void setPort(int inputPort) {
     	this.port = inputPort;
     }
     
-    static public nettyServer Instance() {
+    static public nettyServer getInstance() {
     	return instance;
     }
     
@@ -73,10 +76,10 @@ public class nettyServer implements Runnable{
                     .childHandler(new ChannelInitializer<SocketChannel>() {  
                                 @Override  
                                 public void initChannel(SocketChannel ch) throws Exception {  
-                                    ch.pipeline().addFirst(new MessageConnectEvent("server"))
-                                    			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
-                                    			 .addLast(new MessageLengthFieldFrameHandler())
-                                    			 .addLast(new MessageEncoder());
+                                    ch.pipeline().addFirst(new messageConnectEvent("server"))
+                                    			 .addLast(new messageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
+                                    			 .addLast(new messageLengthFieldFrameHandler())
+                                    			 .addLast(new messageEncoder());
                                     
                                 }  
                             }).option(ChannelOption.SO_BACKLOG, 1024) 
@@ -113,5 +116,16 @@ public class nettyServer implements Runnable{
         bossGroup.shutdownGracefully();   
         System.out.println("Server shutdownGracefully:\t");
     }
+
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void end() {
+		stop();		
+	}
   
 }  

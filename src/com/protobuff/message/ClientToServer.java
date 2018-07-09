@@ -3,8 +3,8 @@
 
 package com.protobuff.message;
 
-public final class ClientToServer {
-  private ClientToServer() {}
+public final class clientToServer {
+  private clientToServer() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -123,14 +123,14 @@ public final class ClientToServer {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
+      return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_fieldAccessorTable
+      return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.protobuff.message.ClientToServer.client_to_server_register.class, com.protobuff.message.ClientToServer.client_to_server_register.Builder.class);
+              com.protobuff.message.clientToServer.client_to_server_register.class, com.protobuff.message.clientToServer.client_to_server_register.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -259,10 +259,10 @@ public final class ClientToServer {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.protobuff.message.ClientToServer.client_to_server_register)) {
+      if (!(obj instanceof com.protobuff.message.clientToServer.client_to_server_register)) {
         return super.equals(obj);
       }
-      com.protobuff.message.ClientToServer.client_to_server_register other = (com.protobuff.message.ClientToServer.client_to_server_register) obj;
+      com.protobuff.message.clientToServer.client_to_server_register other = (com.protobuff.message.clientToServer.client_to_server_register) obj;
 
       boolean result = true;
       result = result && (getId()
@@ -294,69 +294,69 @@ public final class ClientToServer {
       return hash;
     }
 
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(byte[] data)
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(java.io.InputStream input)
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseDelimitedFrom(java.io.InputStream input)
+    public static com.protobuff.message.clientToServer.client_to_server_register parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseDelimitedFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -368,7 +368,7 @@ public final class ClientToServer {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.protobuff.message.ClientToServer.client_to_server_register prototype) {
+    public static Builder newBuilder(com.protobuff.message.clientToServer.client_to_server_register prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -388,17 +388,17 @@ public final class ClientToServer {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.protobuff.message.client_to_server_register)
-        com.protobuff.message.ClientToServer.client_to_server_registerOrBuilder {
+        com.protobuff.message.clientToServer.client_to_server_registerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_fieldAccessorTable
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.protobuff.message.ClientToServer.client_to_server_register.class, com.protobuff.message.ClientToServer.client_to_server_register.Builder.class);
+                com.protobuff.message.clientToServer.client_to_server_register.class, com.protobuff.message.clientToServer.client_to_server_register.Builder.class);
       }
 
       // Construct using com.protobuff.message.ClientToServer.client_to_server_register.newBuilder()
@@ -429,23 +429,23 @@ public final class ClientToServer {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_descriptor;
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register getDefaultInstanceForType() {
-        return com.protobuff.message.ClientToServer.client_to_server_register.getDefaultInstance();
+      public com.protobuff.message.clientToServer.client_to_server_register getDefaultInstanceForType() {
+        return com.protobuff.message.clientToServer.client_to_server_register.getDefaultInstance();
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register build() {
-        com.protobuff.message.ClientToServer.client_to_server_register result = buildPartial();
+      public com.protobuff.message.clientToServer.client_to_server_register build() {
+        com.protobuff.message.clientToServer.client_to_server_register result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register buildPartial() {
-        com.protobuff.message.ClientToServer.client_to_server_register result = new com.protobuff.message.ClientToServer.client_to_server_register(this);
+      public com.protobuff.message.clientToServer.client_to_server_register buildPartial() {
+        com.protobuff.message.clientToServer.client_to_server_register result = new com.protobuff.message.clientToServer.client_to_server_register(this);
         result.id_ = id_;
         result.account_ = account_;
         result.password_ = password_;
@@ -480,16 +480,16 @@ public final class ClientToServer {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.protobuff.message.ClientToServer.client_to_server_register) {
-          return mergeFrom((com.protobuff.message.ClientToServer.client_to_server_register)other);
+        if (other instanceof com.protobuff.message.clientToServer.client_to_server_register) {
+          return mergeFrom((com.protobuff.message.clientToServer.client_to_server_register)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.protobuff.message.ClientToServer.client_to_server_register other) {
-        if (other == com.protobuff.message.ClientToServer.client_to_server_register.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.protobuff.message.clientToServer.client_to_server_register other) {
+        if (other == com.protobuff.message.clientToServer.client_to_server_register.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -514,11 +514,11 @@ public final class ClientToServer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.protobuff.message.ClientToServer.client_to_server_register parsedMessage = null;
+        com.protobuff.message.clientToServer.client_to_server_register parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.protobuff.message.ClientToServer.client_to_server_register) e.getUnfinishedMessage();
+          parsedMessage = (com.protobuff.message.clientToServer.client_to_server_register) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -706,12 +706,12 @@ public final class ClientToServer {
     }
 
     // @@protoc_insertion_point(class_scope:com.protobuff.message.client_to_server_register)
-    private static final com.protobuff.message.ClientToServer.client_to_server_register DEFAULT_INSTANCE;
+    private static final com.protobuff.message.clientToServer.client_to_server_register DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.protobuff.message.ClientToServer.client_to_server_register();
+      DEFAULT_INSTANCE = new com.protobuff.message.clientToServer.client_to_server_register();
     }
 
-    public static com.protobuff.message.ClientToServer.client_to_server_register getDefaultInstance() {
+    public static com.protobuff.message.clientToServer.client_to_server_register getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -734,7 +734,7 @@ public final class ClientToServer {
       return PARSER;
     }
 
-    public com.protobuff.message.ClientToServer.client_to_server_register getDefaultInstanceForType() {
+    public com.protobuff.message.clientToServer.client_to_server_register getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -843,14 +843,14 @@ public final class ClientToServer {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
+      return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_fieldAccessorTable
+      return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.protobuff.message.ClientToServer.client_to_server_register_respone.class, com.protobuff.message.ClientToServer.client_to_server_register_respone.Builder.class);
+              com.protobuff.message.clientToServer.client_to_server_register_respone.class, com.protobuff.message.clientToServer.client_to_server_register_respone.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -955,10 +955,10 @@ public final class ClientToServer {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.protobuff.message.ClientToServer.client_to_server_register_respone)) {
+      if (!(obj instanceof com.protobuff.message.clientToServer.client_to_server_register_respone)) {
         return super.equals(obj);
       }
-      com.protobuff.message.ClientToServer.client_to_server_register_respone other = (com.protobuff.message.ClientToServer.client_to_server_register_respone) obj;
+      com.protobuff.message.clientToServer.client_to_server_register_respone other = (com.protobuff.message.clientToServer.client_to_server_register_respone) obj;
 
       boolean result = true;
       result = result && (getId()
@@ -990,69 +990,69 @@ public final class ClientToServer {
       return hash;
     }
 
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(byte[] data)
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(java.io.InputStream input)
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseDelimitedFrom(java.io.InputStream input)
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseDelimitedFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone parseFrom(
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1064,7 +1064,7 @@ public final class ClientToServer {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.protobuff.message.ClientToServer.client_to_server_register_respone prototype) {
+    public static Builder newBuilder(com.protobuff.message.clientToServer.client_to_server_register_respone prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1084,17 +1084,17 @@ public final class ClientToServer {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.protobuff.message.client_to_server_register_respone)
-        com.protobuff.message.ClientToServer.client_to_server_register_responeOrBuilder {
+        com.protobuff.message.clientToServer.client_to_server_register_responeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_fieldAccessorTable
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.protobuff.message.ClientToServer.client_to_server_register_respone.class, com.protobuff.message.ClientToServer.client_to_server_register_respone.Builder.class);
+                com.protobuff.message.clientToServer.client_to_server_register_respone.class, com.protobuff.message.clientToServer.client_to_server_register_respone.Builder.class);
       }
 
       // Construct using com.protobuff.message.ClientToServer.client_to_server_register_respone.newBuilder()
@@ -1125,23 +1125,23 @@ public final class ClientToServer {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.protobuff.message.ClientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
+        return com.protobuff.message.clientToServer.internal_static_com_protobuff_message_client_to_server_register_respone_descriptor;
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register_respone getDefaultInstanceForType() {
-        return com.protobuff.message.ClientToServer.client_to_server_register_respone.getDefaultInstance();
+      public com.protobuff.message.clientToServer.client_to_server_register_respone getDefaultInstanceForType() {
+        return com.protobuff.message.clientToServer.client_to_server_register_respone.getDefaultInstance();
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register_respone build() {
-        com.protobuff.message.ClientToServer.client_to_server_register_respone result = buildPartial();
+      public com.protobuff.message.clientToServer.client_to_server_register_respone build() {
+        com.protobuff.message.clientToServer.client_to_server_register_respone result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.protobuff.message.ClientToServer.client_to_server_register_respone buildPartial() {
-        com.protobuff.message.ClientToServer.client_to_server_register_respone result = new com.protobuff.message.ClientToServer.client_to_server_register_respone(this);
+      public com.protobuff.message.clientToServer.client_to_server_register_respone buildPartial() {
+        com.protobuff.message.clientToServer.client_to_server_register_respone result = new com.protobuff.message.clientToServer.client_to_server_register_respone(this);
         result.id_ = id_;
         result.account_ = account_;
         result.errorCode_ = errorCode_;
@@ -1176,16 +1176,16 @@ public final class ClientToServer {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.protobuff.message.ClientToServer.client_to_server_register_respone) {
-          return mergeFrom((com.protobuff.message.ClientToServer.client_to_server_register_respone)other);
+        if (other instanceof com.protobuff.message.clientToServer.client_to_server_register_respone) {
+          return mergeFrom((com.protobuff.message.clientToServer.client_to_server_register_respone)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.protobuff.message.ClientToServer.client_to_server_register_respone other) {
-        if (other == com.protobuff.message.ClientToServer.client_to_server_register_respone.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.protobuff.message.clientToServer.client_to_server_register_respone other) {
+        if (other == com.protobuff.message.clientToServer.client_to_server_register_respone.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -1209,11 +1209,11 @@ public final class ClientToServer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.protobuff.message.ClientToServer.client_to_server_register_respone parsedMessage = null;
+        com.protobuff.message.clientToServer.client_to_server_register_respone parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.protobuff.message.ClientToServer.client_to_server_register_respone) e.getUnfinishedMessage();
+          parsedMessage = (com.protobuff.message.clientToServer.client_to_server_register_respone) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1358,12 +1358,12 @@ public final class ClientToServer {
     }
 
     // @@protoc_insertion_point(class_scope:com.protobuff.message.client_to_server_register_respone)
-    private static final com.protobuff.message.ClientToServer.client_to_server_register_respone DEFAULT_INSTANCE;
+    private static final com.protobuff.message.clientToServer.client_to_server_register_respone DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.protobuff.message.ClientToServer.client_to_server_register_respone();
+      DEFAULT_INSTANCE = new com.protobuff.message.clientToServer.client_to_server_register_respone();
     }
 
-    public static com.protobuff.message.ClientToServer.client_to_server_register_respone getDefaultInstance() {
+    public static com.protobuff.message.clientToServer.client_to_server_register_respone getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1386,7 +1386,7 @@ public final class ClientToServer {
       return PARSER;
     }
 
-    public com.protobuff.message.ClientToServer.client_to_server_register_respone getDefaultInstanceForType() {
+    public com.protobuff.message.clientToServer.client_to_server_register_respone getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

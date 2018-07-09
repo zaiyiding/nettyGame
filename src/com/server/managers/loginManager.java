@@ -2,12 +2,12 @@ package com.server.managers;
 
 
 
-import com.action.ActionCell;
+import com.action.actionCell;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.protobuff.message.ClientToServer.client_to_server_register;
-import com.protobuff.message.ClientToServer.client_to_server_register_respone;
+import com.protobuff.message.clientToServer.client_to_server_register;
+import com.protobuff.message.clientToServer.client_to_server_register_respone;
 import com.protobuff.message.messageId;
-import com.server.netty.message.Message;
+import com.server.netty.message.message;
 import com.server.player.serverPlayer;
 
 public class loginManager implements initAndEndObersver{
@@ -22,7 +22,7 @@ public class loginManager implements initAndEndObersver{
 		return instance;
 	}
 	
-	public void responeClientResigter(Message msgInput) {
+	public void responeClientResigter(message msgInput) {
 		client_to_server_register msg = null;
 		try {
 			msg = client_to_server_register.parseFrom((byte[])msgInput.getBody());
@@ -33,6 +33,7 @@ public class loginManager implements initAndEndObersver{
 		System.out.println("responeClientResigter: im coming , im: " + msg.getAccount() + " psw: " + msg.getPassword());
 		int loginError = 0;
 		if(!serverPlayerManager.Instance().isExistPlayer(msg.getId())) {
+			// todo: 不可信任.回头要走数据库
 			serverPlayer tmpPlayer = new serverPlayer();
 			tmpPlayer.setChannel(msgInput.getChannel());
 			tmpPlayer.setId(msg.getId());
@@ -45,7 +46,7 @@ public class loginManager implements initAndEndObersver{
 		}
 		
 		client_to_server_register_respone tmpRespone = client_to_server_register_respone.newBuilder().setErrorCode(loginError).setAccount(msg.getAccount()).build();
-		Message tmpRes = new Message(messageId._client_to_server_register_respone, tmpRespone.toByteArray());
+		message tmpRes = new message(messageId._client_to_server_register_respone, tmpRespone.toByteArray());
 				
 		msgInput.getChannel().writeAndFlush(tmpRes);
 		System.out.println("responeClientResigter: sended respone");
@@ -60,10 +61,10 @@ public class loginManager implements initAndEndObersver{
 	public void init() {
 		// TODO Auto-generated method stub
 		try {					
-			messageManager.getInstance().putAction(messageId._client_to_server_register,  (new ActionCell(){    		    
+			messageManager.getInstance().putAction(messageId._client_to_server_register,  (new actionCell(){    		    
 				@Override
 				public Object run(Object... args) {					
-						Message tmpMsg = (Message)args[0];
+						message tmpMsg = (message)args[0];
 						loginManager.getInstance().responeClientResigter(tmpMsg);
 					
 					return null;

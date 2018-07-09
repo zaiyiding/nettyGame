@@ -1,7 +1,7 @@
 package com.server.player;
 
 import com.protobuff.message.messageId;
-import com.server.netty.message.Message;
+import com.server.netty.message.message;
 
 import io.netty.channel.Channel;
 
@@ -41,7 +41,7 @@ public class serverPlayer {
 	}
 	
 	public void SendMessages(int idInput, byte[] byteInput) {
-		Message tmpRes = new Message(messageId._client_to_server_register_respone, byteInput);		
+		message tmpRes = new message(messageId._client_to_server_register_respone, byteInput);		
 		SendMessages(tmpRes);
 	}
 }

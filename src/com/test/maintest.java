@@ -1,6 +1,6 @@
 package com.test;
 
-import com.server.netty.message.Message;
+import com.server.netty.message.message;
 
 public class maintest {
 	public static void main(String[] args){	        
@@ -8,7 +8,7 @@ public class maintest {
 	    }	
 		
 		
-		public static void handleHello(int test1, Message o1) {
+		public static void handleHello(int test1, message o1) {
 			//int test1 = (int)args[0]; 
 			//Message o1 = (Message) args[1];
 			System.out.println("handleHello1 : " + o1.toString() + " key :" + String.valueOf(test1));
@@ -19,7 +19,7 @@ public class maintest {
 			// 但是我们的实际要用的还是数组.需要强转一次
 			Object[] args = (Object[])input;
 			int test1 = (int)args[0]; 
-			Message o1 = (Message) args[1];
+			message o1 = (message) args[1];
 			System.out.println("handleHello2 : " + o1.toString() + " key :" + String.valueOf(test1));
 		}	
 

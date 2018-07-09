@@ -2,16 +2,17 @@ package com.server.managers;
 
 import java.util.concurrent.TimeUnit;
 
-import com.action.ActionCell;
-import com.action.ActionMapUtil;
-import com.queue.MessageQueue;
-import com.server.netty.message.Message;
+import com.action.actionCell;
+import com.action.actionMapUtil;
+import com.queue.messageQueue;
+import com.server.netty.message.message;
 import com.server.player.serverPlayer;
+import com.sun.corba.se.pept.protocol.MessageMediator;
 
 public class messageManager implements initAndEndObersver, runObersver
 {
 	private static final messageManager instance = new messageManager();
-	private ActionMapUtil myMap = new ActionMapUtil();
+	private actionMapUtil myMap = new actionMapUtil();
 	private messageManager() {
 		gameManger.getInstance().addInitAndEndObserver(this);
 		gameManger.getInstance().addRunObserver(this);
@@ -21,11 +22,11 @@ public class messageManager implements initAndEndObersver, runObersver
 		return instance;
 	}
 	
-	public void putAction(Integer key, ActionCell action) {
+	public void putAction(Integer key, actionCell action) {
 		myMap.putAction(key, action); 
     }
 	
-	public void invokeMap(Message inputMsg)  {
+	public void invokeMap(message inputMsg)  {
 		try {
 			serverPlayer tmpPlayer = serverPlayerManager.Instance().getPlayerByChannel(inputMsg.getChannel());
 			myMap.invoteWithStatic(inputMsg.getid(), inputMsg, tmpPlayer);
@@ -40,8 +41,8 @@ public class messageManager implements initAndEndObersver, runObersver
 		// 一次处理30个消息包
 		final int max_count = 30;
 		int count = 0;
-		while (count < max_count && MessageQueue.getInstance().getQueueSize() > 0){			
-			Message msg = MessageQueue.getInstance().take();
+		while (count < max_count && messageQueue.getInstance().getQueueSize() > 0){			
+			message msg = messageQueue.getInstance().take();
 			invokeMap(msg);
 			++count;
 		}
@@ -69,7 +70,7 @@ public class messageManager implements initAndEndObersver, runObersver
 	@Override
 	public void end() {
 		// TODO Auto-generated method stub
-		
+		messageQueue.getInstance().clean();		
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package com.action;
 
 
-public interface  ActionCell {
+public interface  actionCell {
 	public Object run(Object... args);
 }

@@ -23,15 +23,11 @@ public class mainServerApp {
 	
     public static void main(String[] args) {
     	mainServerApp.Instance().eventMangerInit();
-		
-		// 初始化netty			     		
-		gameManger.getInstance().noticeInit();					
-		nettyServer.Instance().setPort(12345);
-		
-		
-		exec.execute(nettyServer.Instance()); 
+				
+		exec.execute(nettyServer.getInstance()); 
 		exec.execute(serverCommand.Instance()); 
 		System.out.println("server start...............");
+		
 		while(flag) {			
 			try {
 				gameManger.getInstance().run();
@@ -45,26 +41,31 @@ public class mainServerApp {
     }
     
     public void eventMangerInit() {
-    	loginManager.getInstance();
+
+		// 初始化netty				
+    	nettyServer.getInstance().setPort(12345);
+    	// 
     	messageManager.getInstance();
+    	loginManager.getInstance();		
+		gameManger.getInstance().noticeInit();		
     }
     
     public void stop() {
+    	// 消息包没处理完的会被先丢弃
     	gameManger.getInstance().noticeEnd();
-    	nettyServer.Instance().stop();
-    	serverCommand.Instance().stop();
     	Timer testTime = new Timer();
     	exec.shutdown();
-    		
+    	int nMillSeconds = 3000;
     	testTime.schedule(new TimerTask () {
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				flag  = false;
 				//exec.shutdownNow();		
-				System.out.println("all done");		
+				System.out.println("all done");	
+				// very improtant
 				testTime.cancel();
-			}}, 3000);   
+			}}, nMillSeconds); 
+    	System.out.println("showdown in " + nMillSeconds + "Millseconds");
     	
     }
 }

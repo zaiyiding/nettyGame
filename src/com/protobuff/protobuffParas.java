@@ -1,10 +1,10 @@
 package com.protobuff;
 
-import com.action.ActionCell;
-import com.action.ActionMapUtil;
+import com.action.actionCell;
+import com.action.actionMapUtil;
 
 public class protobuffParas {
-	static ActionMapUtil myMap = new ActionMapUtil();
+	static actionMapUtil myMap = new actionMapUtil();
      
     public static Object invoteWithStatic(Integer key, Object... args) throws Exception {  
     	 try {
@@ -16,7 +16,7 @@ public class protobuffParas {
     	 return null;
     }  
     
-    public static void putAction(Integer key, ActionCell action) {
+    public static void putAction(Integer key, actionCell action) {
     	myMap.putAction(key, action); 
     	
     }

@@ -5,12 +5,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import com.command.clientCommand;
-import com.protobuff.message.ClientToServer.client_to_server_register;
-import com.server.netty.message.Message;
-import com.server.netty.message.MessageConnectEvent;
-import com.server.netty.message.MessageEncoder;
-import com.server.netty.message.MessageLengthFieldFrameDecoder;
-import com.server.netty.message.MessageLengthFieldFrameHandler;
+import com.protobuff.message.clientToServer.client_to_server_register;
+import com.server.netty.message.message;
+import com.server.netty.message.messageConnectEvent;
+import com.server.netty.message.messageEncoder;
+import com.server.netty.message.messageLengthFieldFrameDecoder;
+import com.server.netty.message.messageLengthFieldFrameHandler;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -22,7 +22,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-public class NettyClient implements Runnable {
+public class nettyClient implements Runnable {
 	private Channel sendchannel = null;
 	private final static String host = "localhost";
 	private final static int port = 12345;
@@ -33,13 +33,13 @@ public class NettyClient implements Runnable {
     private static final int LENGTH_ADJUSTMENT = 0;  
     private static final int INITIAL_BYTES_TO_STRIP = 0; 
     
-    private static NettyClient instance = new NettyClient();
+    private static nettyClient instance = new nettyClient();
     
-    static public synchronized NettyClient  Instance() {
+    static public synchronized nettyClient  Instance() {
     	return instance;
     }
     
-    private NettyClient() {
+    private nettyClient() {
     	
     }
     
@@ -53,10 +53,10 @@ public class NettyClient implements Runnable {
 							.option(ChannelOption.TCP_NODELAY, true)
 							.handler(new ChannelInitializer<SocketChannel>() {
 								public void initChannel(SocketChannel ch) throws Exception {  
-                                    ch.pipeline().addFirst(new MessageConnectEvent("client"))
-                                    			 .addLast(new MessageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
-                                    			 .addLast(new MessageLengthFieldFrameHandler())
-                                    			 .addLast(new MessageEncoder());
+                                    ch.pipeline().addFirst(new messageConnectEvent("client"))
+                                    			 .addLast(new messageLengthFieldFrameDecoder(ByteOrder.LITTLE_ENDIAN, MAX_FRAME_LENGTH,LENGTH_FIELD_LENGTH,LENGTH_FIELD_OFFSET,LENGTH_ADJUSTMENT,INITIAL_BYTES_TO_STRIP,false)) 			                                     
+                                    			 .addLast(new messageLengthFieldFrameHandler())
+                                    			 .addLast(new messageEncoder());
                                 }  
 								
 							}) .option(ChannelOption.SO_KEEPALIVE, true); ;// 这里为了简便直接使用内部类
@@ -70,7 +70,7 @@ public class NettyClient implements Runnable {
 					client_to_server_register tmpMessage = client_to_server_register
 							.newBuilder().setAccount("test1").setPassword("passwd1").build();
 					
-					Message test1 = new Message(1, tmpMessage.toByteArray());					
+					message test1 = new message(1, tmpMessage.toByteArray());					
 					sendMsg(test1);
 				}
 

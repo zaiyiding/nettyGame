@@ -7,19 +7,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.action.ActionCell;
+import com.action.actionCell;
 public class commandRunnable implements Runnable{
 	
-	private Map<String, ActionCell>  map = new HashMap<String, ActionCell>();
+	private Map<String, actionCell>  map = new HashMap<String, actionCell>();
 
 	private boolean  flag = true;
 	
-	public void addCommand(String cmd, ActionCell input) {
+	public void addCommand(String cmd, actionCell input) {
 		map.put(cmd, input);		
 	}
 	
 	public void excute(String cmd, Object... args) {
-		ActionCell tmp =  map.get(cmd);
+		actionCell tmp =  map.get(cmd);
 		if(null != tmp) {
 			tmp.run(args);
 		}else {

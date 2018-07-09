@@ -5,7 +5,7 @@ import com.server.managers.serverPlayerManager;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class MessageConnectEvent extends ChannelInboundHandlerAdapter{
+public class messageConnectEvent extends ChannelInboundHandlerAdapter{
 	public String apptype = "null";
 	
 	public String getApptype() {
@@ -16,7 +16,7 @@ public class MessageConnectEvent extends ChannelInboundHandlerAdapter{
 		this.apptype = apptype;
 	}
 	
-	public MessageConnectEvent(String nInput) {
+	public messageConnectEvent(String nInput) {
 		apptype = nInput;
 	}
 	

@@ -1,11 +1,11 @@
 package com.client.manager;
 
-import com.action.ActionCell;
+import com.action.actionCell;
 import com.protobuff.message.messageId;
 import com.server.managers.gameManger;
 import com.server.managers.initAndEndObersver;
 import com.server.managers.messageManager;
-import com.server.netty.message.Message;
+import com.server.netty.message.message;
 
 public class clientLoginManager implements initAndEndObersver {
 	
@@ -22,10 +22,10 @@ public class clientLoginManager implements initAndEndObersver {
 	@Override
 	public void init() {
 		try {					
-			messageManager.getInstance().putAction(messageId._client_to_server_register_respone,  (new ActionCell(){    		    
+			messageManager.getInstance().putAction(messageId._client_to_server_register_respone,  (new actionCell(){    		    
 				@Override
 				public Object run(Object... args) {					
-						Message tmpMsg = (Message)args[0];
+						message tmpMsg = (message)args[0];
 						clientLoginManager.getInstance().onServerLoginRespone(tmpMsg);
 					
 					return null;
@@ -46,7 +46,7 @@ public class clientLoginManager implements initAndEndObersver {
 		
 	}
 	
-	public void onServerLoginRespone(Message inputMsg) {
+	public void onServerLoginRespone(message inputMsg) {
 		System.out.println("onServerLoginRespone");
 	}
 }

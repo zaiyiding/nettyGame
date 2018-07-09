@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * 所有消息队列的基类,组件优于继承
  * */
-public class BaseQueue<T> {
+public class baseQueue<T> {
 
 	/** 消息队列 */
 	private final BlockingQueue<T> queue = new LinkedBlockingQueue<T>();

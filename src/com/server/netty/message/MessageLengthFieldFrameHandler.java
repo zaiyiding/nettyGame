@@ -1,19 +1,19 @@
 package com.server.netty.message;
 
-import com.queue.MessageQueue;
+import com.queue.messageQueue;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-public class MessageLengthFieldFrameHandler extends SimpleChannelInboundHandler<Object>{
+public class messageLengthFieldFrameHandler extends SimpleChannelInboundHandler<Object>{
 
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
 		// TODO Auto-generated method stub
-		 if(msg instanceof Message) {  
-			 Message customMsg = (Message)msg;  
+		 if(msg instanceof message) {  
+			 message customMsg = (message)msg;  
 			 customMsg.setChannel(ctx.channel());
-			 MessageQueue.getInstance().put(customMsg);
+			 messageQueue.getInstance().put(customMsg);
 	            System.out.println("MessageLengthFieldFrameHandler :"+ customMsg.toString());  
 	        } 		
 	}

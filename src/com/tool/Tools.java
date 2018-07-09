@@ -1,6 +1,6 @@
 package com.tool;
 
-public class Tools {
+public class tools {
 	/**  
 	  * 将int转为低字节在前，高字节在后的byte数组  
 	  * @param n int  
