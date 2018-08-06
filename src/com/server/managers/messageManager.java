@@ -70,7 +70,7 @@ public class messageManager implements initAndEndObersver, runObersver
 	@Override
 	public void end() {
 		// TODO Auto-generated method stub
-		messageQueue.getInstance().clean();		
+		messageQueue.getInstance().cleanMsg();		
 	}
 
 	@Override

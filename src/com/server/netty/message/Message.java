@@ -7,7 +7,7 @@ import com.tool.tools;
 
 import io.netty.channel.Channel;
 public class message {
-	//判断传送客户端传送过来的数据是否按照协议传输，头部信息的大小应该是int +int = 4 + 4 = 6  
+	//判断传送客户端传送过来的数据是否按照协议传输，头部信息的大小应该是int +int = 4 + 4 = 8  
     private static final int HEADER_SIZE = 8;  
     
     public static int getHeadSize() {

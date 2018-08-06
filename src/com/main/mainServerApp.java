@@ -42,7 +42,7 @@ public class mainServerApp {
     
     public void eventMangerInit() {
 
-		// ≥ı ºªØnetty				
+		// init netty				
     	nettyServer.getInstance().setPort(12345);
     	// 
     	messageManager.getInstance();

@@ -14,7 +14,7 @@ import gnu.trove.map.hash.TLongObjectHashMap;
 public class actionMapUtil {  
     
     //private Map<Integer, ActionCell> commands = new HashMap<Integer, ActionCell>();
-	// 改成快的和小的map
+	// 鏀规垚蹇殑鍜屽皬鐨刴ap
 	public final static TLongObjectMap<actionCell> commands = new TLongObjectHashMap<actionCell>();
 	
     public Object invoteWithStatic(Integer key, Object... args) throws Exception {     	

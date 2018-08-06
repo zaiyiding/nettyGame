@@ -59,13 +59,13 @@ public class nettyClient implements Runnable {
                                     			 .addLast(new messageEncoder());
                                 }  
 								
-							}) .option(ChannelOption.SO_KEEPALIVE, true); ;// 这里为了简便直接使用内部类
+							}) .option(ChannelOption.SO_KEEPALIVE, true); ;
 
 				// Start the client.
 				ChannelFuture f = b.connect(host, port).sync();
 				sendchannel = f.channel();
 				if (f.isDone()) {
-					System.out.println("连接成功");				
+					System.out.println("锟斤拷锟接成癸拷");				
 					//test :
 					client_to_server_register tmpMessage = client_to_server_register
 							.newBuilder().setAccount("test1").setPassword("passwd1").build();
@@ -74,7 +74,8 @@ public class nettyClient implements Runnable {
 					sendMsg(test1);
 				}
 
-			} catch (InterruptedException e) {// 链接失败
+			} catch (InterruptedException e) {
+				// connect fail 
 				e.printStackTrace();
 			} finally {			
 				//System.out.println("Client shutdownGracefully:\t");
@@ -85,13 +86,13 @@ public class nettyClient implements Runnable {
 	
 	public void sendMsg(Object msgEntity) {
 		sendchannel.writeAndFlush(msgEntity);
-		System.out.println("Client 发送数据成功,命令码:\t" + msgEntity.toString());
+		System.out.println("Client send over:\t" + msgEntity.toString());
 	}
 	
 	 /*public static void main(String[] args) {
    	  
  		ExecutorService exec = Executors.newCachedThreadPool(); 		
- 		// 初始化netty
+ 		// 锟斤拷始锟斤拷netty
  		//NettyClient test1 = new NettyClient();
  		exec.execute(NettyClient.Instance());			
  		exec.execute(clientCommand.Instance());	

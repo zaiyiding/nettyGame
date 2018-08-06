@@ -32,5 +32,8 @@ public class baseQueue<T> {
 	public int getQueueSize() {
 		return queue.size();
 	}
+	public void clear() {
+		queue.clear();
+	}
 
 }
