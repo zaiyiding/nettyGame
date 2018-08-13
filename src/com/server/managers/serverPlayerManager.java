@@ -56,6 +56,7 @@ public class serverPlayerManager {
 			return;
 		}
 		
+		serverPlayerManager.Instance().removePlayer(tmpPlayer.getId());
 		System.out.println("player " + tmpPlayer.getAccount() + "off line");
 		// todo: Êý¾Ý¿â´æ´¢
 	}

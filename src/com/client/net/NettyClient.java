@@ -44,6 +44,7 @@ public class nettyClient implements Runnable {
     }
     
 	public void run() {
+		    
 			EventLoopGroup group = new NioEventLoopGroup();
 			try {
 
@@ -63,6 +64,7 @@ public class nettyClient implements Runnable {
 
 				// Start the client.
 				ChannelFuture f = b.connect(host, port).sync();
+				System.out.println("clinet run11111111111 ");	
 				sendchannel = f.channel();
 				if (f.isDone()) {
 					System.out.println("���ӳɹ�");				

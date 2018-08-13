@@ -26,11 +26,12 @@ public class messageConnectEvent extends ChannelInboundHandlerAdapter{
         super.channelInactive(ctx);
         System.out.println("client out ip" + ctx.channel().remoteAddress().toString() + " type : " + apptype);
         serverPlayerManager.Instance().OnPlayerOffline(ctx.channel());
+        
 	}
 	
 	@Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        super.channelInactive(ctx);
+        super.channelActive(ctx);
         System.out.println("client connect ip" + ctx.channel().remoteAddress().toString() + " type : " + apptype);
 	}
 	

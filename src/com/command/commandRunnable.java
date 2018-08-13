@@ -18,12 +18,13 @@ public class commandRunnable implements Runnable{
 		map.put(cmd, input);		
 	}
 	
-	public void excute(String cmd, Object... args) {
+	public Object excute(String cmd, Object... args) {
 		actionCell tmp =  map.get(cmd);
 		if(null != tmp) {
-			tmp.run(args);
+			return	tmp.run(args);
 		}else {
 			System.out.println("unRegister cmd : " + cmd);
+			return null;
 		}
 	}
 	

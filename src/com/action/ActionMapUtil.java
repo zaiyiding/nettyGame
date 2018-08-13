@@ -1,21 +1,16 @@
 package com.action;
 
-import java.lang.reflect.Method;  
-import java.util.HashMap;  
-import java.util.Map;
-
-import com.server.netty.message.message;
-import com.server.player.serverPlayer;
-import com.test.maintest;
 
 import gnu.trove.map.TLongObjectMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
   
 public class actionMapUtil {  
-    
+    public actionMapUtil() {
+    	
+    }
     //private Map<Integer, ActionCell> commands = new HashMap<Integer, ActionCell>();
 	// 改成快的和小的map
-	public final static TLongObjectMap<actionCell> commands = new TLongObjectHashMap<actionCell>();
+	public final TLongObjectMap<actionCell> commands = new TLongObjectHashMap<actionCell>();
 	
     public Object invoteWithStatic(Integer key, Object... args) throws Exception {     	
     	actionCell tmpAciton = commands.get(key);
@@ -35,6 +30,8 @@ public class actionMapUtil {
     }
   
     public static void main(String[] args) throws Exception {
+    	
+    	
     	
     }
     

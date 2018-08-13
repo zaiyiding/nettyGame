@@ -26,6 +26,15 @@ public class serverCommand extends commandRunnable implements initAndEndObersver
 				return null;
 			}
 		})); 
+		
+		/*addCommand("test1", (new actionCell(){    		    
+			@Override
+			public Object run(Object... args) {
+				int a = 0;
+				a += 100;				
+				return a;
+			}
+		})); */
 	}
 
 	@Override
@@ -33,4 +42,10 @@ public class serverCommand extends commandRunnable implements initAndEndObersver
 		// TODO Auto-generated method stub
 		this.stop();		
 	}
+	
+	public static void main(String[] args) throws Exception {
+		int a = (int)serverCommand.Instance().excute("test1", 1,1,1);    	
+    	System.out.println("test1 : " + a);
+    }
+
 }
