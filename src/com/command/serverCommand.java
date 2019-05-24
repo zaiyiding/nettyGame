@@ -4,13 +4,32 @@ import com.action.actionCell;
 import com.main.mainServerApp;
 import com.server.managers.gameManger;
 import com.server.managers.initAndEndObersver;
+import com.server.net.nettyServer;
 
 public class serverCommand extends commandRunnable implements initAndEndObersver {
-	private static serverCommand instance = new serverCommand();
+	private static serverCommand instance = null;
 
-	static public serverCommand Instance() {
+	/*static public serverCommand Instance() {
+		if(instance == null){
+			synchronized (serverCommand.class) {
+				if (instance == null) {
+					instance = new serverCommand();
+					instance.init();
+
+				}
+			}
+    	}
+		return instance;
+	}*/
+	static synchronized public serverCommand Instance() {
+		if(instance == null){{
+			instance = new serverCommand();
+			instance.init();
+			}
+    	}
 		return instance;
 	}
+	
 	
 	private serverCommand() {
 		init();

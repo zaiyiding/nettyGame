@@ -19,7 +19,7 @@ public class gameManger {
 		
 	}
 	
-	public static gameManger getInstance() {
+	public static synchronized gameManger getInstance() {
 		return instance;
 	}
 	

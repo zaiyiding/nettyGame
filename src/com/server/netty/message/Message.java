@@ -56,13 +56,13 @@ public class message {
 	        out.write(tools.intToByte2(id));
 	        out.write(body);
 	        byte[] tmpByte = out.toByteArray();
-	        System.out.println("toByte(): " + tmpByte.length);
+	        System.out.println("toByte() length : " + tmpByte.length);
 	        return out.toByteArray();        
 	 }
 	 @Override
 	 public String toString() {
 		 String tmpString;
-		 tmpString = "size " + size + " id "+ id + " string :" + body; 
+		 tmpString = "size " + size + " id "+ id + " string :" + new String(body); 
 		 return tmpString;
 	 }
 }

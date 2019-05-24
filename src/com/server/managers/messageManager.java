@@ -7,7 +7,7 @@ import com.action.actionMapUtil;
 import com.queue.messageQueue;
 import com.server.netty.message.message;
 import com.server.player.serverPlayer;
-import com.sun.corba.se.pept.protocol.MessageMediator;
+//import com.sun.corba.se.pept.protocol.MessageMediator;
 
 public class messageManager implements initAndEndObersver, runObersver
 {
@@ -29,6 +29,10 @@ public class messageManager implements initAndEndObersver, runObersver
 	public void invokeMap(message inputMsg)  {
 		try {
 			serverPlayer tmpPlayer = serverPlayerManager.Instance().getPlayerByChannel(inputMsg.getChannel());
+			if(null == tmpPlayer) {
+				System.out.println("messageManager invokeMap inputMsg.getChannel() = " + inputMsg.getChannel()); 
+				return;
+			}
 			myMap.invoteWithStatic(inputMsg.getid(), inputMsg, tmpPlayer);
 		}
 		catch (Exception e){

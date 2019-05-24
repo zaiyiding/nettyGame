@@ -33,7 +33,7 @@ public class nettyServer implements Runnable, initAndEndObersver{
   
     private int port=12345;  
     private volatile boolean stop = false;
-    static private nettyServer instance = new nettyServer(); 
+    static private nettyServer instance = null; 
     EventLoopGroup bossGroup;
     EventLoopGroup workerGroup;
     /*
@@ -61,15 +61,32 @@ public class nettyServer implements Runnable, initAndEndObersver{
     	this.port = inputPort;
     }
     
-    static public nettyServer getInstance() {
+    /*static public nettyServer getInstance() {
+    	if(instance == null){
+			synchronized (nettyServer.class) {
+				if (instance == null) {
+					instance = new nettyServer();
+					instance.init();
+
+				}
+			}
+    	}
     	return instance;
+    }*/
+    
+    static  synchronized public nettyServer getInstance() {
+    	if(instance == null){
+			instance = new nettyServer();
+			instance.init();
+			}	
+			return instance;
     }
     
     public void run()  {  
         bossGroup = new NioEventLoopGroup();  
         workerGroup = new NioEventLoopGroup();  
-        ByteBuf heapBuffer = Unpooled.buffer(8);  
-        heapBuffer.writeBytes("\r".getBytes());  
+        //ByteBuf heapBuffer = Unpooled.buffer(8);  
+        //heapBuffer.writeBytes("\r".getBytes());  
         try {  
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class) 

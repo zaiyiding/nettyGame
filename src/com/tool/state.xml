@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <state>
+        <from_state id ="101010"> <!--静止站立手持-->
+            <list event = "13" to_state = "101010" type = "1"/> <!--攻击 -> 静止站立手持-->
+            <list event = "1" to_state = "101110" type = "1"/> <!--蹲 -> 静止下蹲手持-->
+            <list event = "3" to_state = "111010" type = "1"/> <!--移动 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "8" to_state = "101016" type = "2"/> <!--救援 -> 静止站立救援-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101014" type = "1"/> <!--使用药品 -> 静止站立使用物品-->
+            <list event = "18" to_state = "101017" type = "1"/> <!--拉栓结束 -> 静止站立投掷准备-->
+            <list event = "21" to_state = "101011" type = "1"/> <!--换弹 -> 静止站立换弹-->
+            <list event = "2" to_state = "101210" type = "1"/> <!--跳 -> 静止跳手持-->
+            <list event = "24" to_state = "101012" type = "1"/> <!--开镜 -> 静止站立开镜-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101110"> <!--静止下蹲手持-->
+            <list event = "1" to_state = "101010" type = "1"/> <!--蹲 -> 静止站立手持-->
+            <list event = "2" to_state = "101010" type = "1"/> <!--跳 -> 静止站立手持-->
+            <list event = "13" to_state = "101110" type = "1"/> <!--攻击 -> 静止下蹲手持-->
+            <list event = "3" to_state = "111110" type = "1"/> <!--移动 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "8" to_state = "101116" type = "2"/> <!--救援 -> 静止下蹲救援-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101114" type = "1"/> <!--使用药品 -> 静止下蹲使用物品-->
+            <list event = "18" to_state = "101117" type = "1"/> <!--拉栓结束 -> 静止下蹲投掷准备-->
+            <list event = "21" to_state = "101111" type = "1"/> <!--换弹 -> 静止下蹲换弹-->
+            <list event = "24" to_state = "101112" type = "1"/> <!--开镜 -> 静止下蹲开镜-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="111010"> <!--跑站立手持-->
+            <list event = "5" to_state = "101010" type = "1"/> <!--移动结束 -> 静止站立手持-->
+            <list event = "13" to_state = "111010" type = "1"/> <!--攻击 -> 跑站立手持-->
+            <list event = "1" to_state = "111110" type = "1"/> <!--蹲 -> 跑下蹲手持-->
+            <list event = "4" to_state = "121010" type = "1"/> <!--快速移动 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "18" to_state = "111017" type = "1"/> <!--拉栓结束 -> 跑站立投掷准备-->
+            <list event = "21" to_state = "111011" type = "1"/> <!--换弹 -> 跑站立换弹-->
+            <list event = "2" to_state = "111210" type = "1"/> <!--跳 -> 跑跳手持-->
+            <list event = "24" to_state = "111012" type = "1"/> <!--开镜 -> 跑站立开镜-->
+            <list event = "22" to_state = "111013" type = "1"/> <!--切换 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="111110"> <!--跑下蹲手持-->
+            <list event = "5" to_state = "101110" type = "1"/> <!--移动结束 -> 静止下蹲手持-->
+            <list event = "1" to_state = "111010" type = "1"/> <!--蹲 -> 跑站立手持-->
+            <list event = "2" to_state = "111010" type = "1"/> <!--跳 -> 跑站立手持-->
+            <list event = "13" to_state = "111110" type = "1"/> <!--攻击 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "19" to_state = "111117" type = "1"/> <!--投掷结束 -> 跑下蹲投掷准备-->
+            <list event = "21" to_state = "111111" type = "1"/> <!--换弹 -> 跑下蹲换弹-->
+            <list event = "24" to_state = "111112" type = "1"/> <!--开镜 -> 跑下蹲开镜-->
+            <list event = "22" to_state = "111113" type = "1"/> <!--切换 -> 跑下蹲切换-->
+        </from_state>
+        <from_state id ="121010"> <!--疾跑站立手持-->
+            <list event = "5" to_state = "101010" type = "1"/> <!--移动结束 -> 静止站立手持-->
+            <list event = "6" to_state = "111010" type = "1"/> <!--快速移动结束 -> 跑站立手持-->
+            <list event = "1" to_state = "111110" type = "1"/> <!--蹲 -> 跑下蹲手持-->
+            <list event = "13" to_state = "121010" type = "1"/> <!--攻击 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "21" to_state = "121011" type = "1"/> <!--换弹 -> 疾跑站立换弹-->
+            <list event = "2" to_state = "121210" type = "1"/> <!--跳 -> 疾跑跳手持-->
+            <list event = "24" to_state = "121012" type = "1"/> <!--开镜 -> 疾跑站立开镜-->
+            <list event = "22" to_state = "121013" type = "1"/> <!--切换 -> 疾跑站立切换-->
+        </from_state>
+        <from_state id ="101710"> <!--静止死亡手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="101116"> <!--静止下蹲救援-->
+            <list event = "1" to_state = "101010" type = "1"/> <!--蹲 -> 静止站立手持-->
+            <list event = "2" to_state = "101010" type = "1"/> <!--跳 -> 静止站立手持-->
+            <list event = "13" to_state = "101110" type = "1"/> <!--攻击 -> 静止下蹲手持-->
+            <list event = "23" to_state = "101110" type = "2"/> <!--救援结束 -> 静止下蹲手持-->
+            <list event = "3" to_state = "111110" type = "1"/> <!--移动 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "24" to_state = "101112" type = "1"/> <!--开镜 -> 静止下蹲开镜-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="101016"> <!--静止站立救援-->
+            <list event = "13" to_state = "101010" type = "1"/> <!--攻击 -> 静止站立手持-->
+            <list event = "23" to_state = "101010" type = "2"/> <!--救援结束 -> 静止站立手持-->
+            <list event = "1" to_state = "101110" type = "1"/> <!--蹲 -> 静止下蹲手持-->
+            <list event = "3" to_state = "111010" type = "1"/> <!--移动 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "2" to_state = "101210" type = "1"/> <!--跳 -> 静止跳手持-->
+            <list event = "24" to_state = "101012" type = "1"/> <!--开镜 -> 静止站立开镜-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101810"> <!--静止濒死手持-->
+            <list event = "9" to_state = "101010" type = "1"/> <!--时间结束 -> 静止站立手持-->
+            <list event = "10" to_state = "101710" type = "2"/> <!--队伍为0 -> 静止死亡手持-->
+            <list event = "11" to_state = "101710" type = "2"/> <!--濒死HP为0 -> 静止死亡手持-->
+            <list event = "3" to_state = "111810" type = "1"/> <!--移动 -> 跑濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="111810"> <!--跑濒死手持-->
+            <list event = "10" to_state = "101710" type = "2"/> <!--队伍为0 -> 静止死亡手持-->
+            <list event = "11" to_state = "101710" type = "2"/> <!--濒死HP为0 -> 静止死亡手持-->
+            <list event = "5" to_state = "101810" type = "1"/> <!--移动结束 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="101910"> <!--静止坐飞机手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "14" to_state = "102010" type = "1"/> <!--跳伞 -> 静止未开伞手持-->
+        </from_state>
+        <from_state id ="102010"> <!--静止未开伞手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "3" to_state = "112010" type = "1"/> <!--移动 -> 跑未开伞手持-->
+            <list event = "15" to_state = "102110" type = "1"/> <!--开伞 -> 静止开伞手持-->
+        </from_state>
+        <from_state id ="112010"> <!--跑未开伞手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "102010" type = "1"/> <!--移动结束 -> 静止未开伞手持-->
+            <list event = "15" to_state = "102110" type = "1"/> <!--开伞 -> 静止开伞手持-->
+        </from_state>
+        <from_state id ="102110"> <!--静止开伞手持-->
+            <list event = "20" to_state = "101010" type = "1"/> <!--落地 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "3" to_state = "112110" type = "1"/> <!--移动 -> 跑开伞手持-->
+        </from_state>
+        <from_state id ="112110"> <!--跑开伞手持-->
+            <list event = "20" to_state = "101010" type = "1"/> <!--落地 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "102110" type = "1"/> <!--移动结束 -> 静止开伞手持-->
+        </from_state>
+        <from_state id ="101014"> <!--静止站立使用物品-->
+            <list event = "9" to_state = "101010" type = "1"/> <!--时间结束 -> 静止站立手持-->
+            <list event = "13" to_state = "101010" type = "1"/> <!--攻击 -> 静止站立手持-->
+            <list event = "3" to_state = "111010" type = "1"/> <!--移动 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "1" to_state = "101114" type = "1"/> <!--蹲 -> 静止下蹲使用物品-->
+            <list event = "2" to_state = "101210" type = "1"/> <!--跳 -> 静止跳手持-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101114"> <!--静止下蹲使用物品-->
+            <list event = "9" to_state = "101110" type = "1"/> <!--时间结束 -> 静止下蹲手持-->
+            <list event = "13" to_state = "101110" type = "1"/> <!--攻击 -> 静止下蹲手持-->
+            <list event = "3" to_state = "111110" type = "1"/> <!--移动 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "1" to_state = "101014" type = "1"/> <!--蹲 -> 静止站立使用物品-->
+            <list event = "2" to_state = "101014" type = "1"/> <!--跳 -> 静止站立使用物品-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="101017"> <!--静止站立投掷准备-->
+            <list event = "19" to_state = "101010" type = "1"/> <!--投掷结束 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "1" to_state = "101117" type = "1"/> <!--蹲 -> 静止下蹲投掷准备-->
+            <list event = "3" to_state = "111017" type = "1"/> <!--移动 -> 跑站立投掷准备-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101117"> <!--静止下蹲投掷准备-->
+            <list event = "19" to_state = "101110" type = "1"/> <!--投掷结束 -> 静止下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "1" to_state = "101017" type = "1"/> <!--蹲 -> 静止站立投掷准备-->
+            <list event = "2" to_state = "101017" type = "1"/> <!--跳 -> 静止站立投掷准备-->
+            <list event = "3" to_state = "111117" type = "1"/> <!--移动 -> 跑下蹲投掷准备-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="111017"> <!--跑站立投掷准备-->
+            <list event = "19" to_state = "101010" type = "1"/> <!--投掷结束 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101017" type = "1"/> <!--移动结束 -> 静止站立投掷准备-->
+            <list event = "1" to_state = "111117" type = "1"/> <!--蹲 -> 跑下蹲投掷准备-->
+            <list event = "22" to_state = "111013" type = "1"/> <!--切换 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="111117"> <!--跑下蹲投掷准备-->
+            <list event = "19" to_state = "101110" type = "1"/> <!--投掷结束 -> 静止下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101117" type = "1"/> <!--移动结束 -> 静止下蹲投掷准备-->
+            <list event = "1" to_state = "111017" type = "1"/> <!--蹲 -> 跑站立投掷准备-->
+            <list event = "2" to_state = "111017" type = "1"/> <!--跳 -> 跑站立投掷准备-->
+            <list event = "22" to_state = "111113" type = "1"/> <!--切换 -> 跑下蹲切换-->
+        </from_state>
+        <from_state id ="101011"> <!--静止站立换弹-->
+            <list event = "9" to_state = "101010" type = "1"/> <!--时间结束 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "8" to_state = "101016" type = "2"/> <!--救援 -> 静止站立救援-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101014" type = "1"/> <!--使用药品 -> 静止站立使用物品-->
+            <list event = "1" to_state = "101111" type = "1"/> <!--蹲 -> 静止下蹲换弹-->
+            <list event = "3" to_state = "111011" type = "1"/> <!--移动 -> 跑站立换弹-->
+            <list event = "2" to_state = "101211" type = "1"/> <!--跳 -> 静止跳换弹-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101111"> <!--静止下蹲换弹-->
+            <list event = "9" to_state = "101110" type = "1"/> <!--时间结束 -> 静止下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101114" type = "1"/> <!--使用药品 -> 静止下蹲使用物品-->
+            <list event = "1" to_state = "101011" type = "1"/> <!--蹲 -> 静止站立换弹-->
+            <list event = "2" to_state = "101011" type = "1"/> <!--跳 -> 静止站立换弹-->
+            <list event = "3" to_state = "111111" type = "1"/> <!--移动 -> 跑下蹲换弹-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="111011"> <!--跑站立换弹-->
+            <list event = "9" to_state = "111010" type = "1"/> <!--时间结束 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101011" type = "1"/> <!--移动结束 -> 静止站立换弹-->
+            <list event = "1" to_state = "111111" type = "1"/> <!--蹲 -> 跑下蹲换弹-->
+            <list event = "4" to_state = "121011" type = "1"/> <!--快速移动 -> 疾跑站立换弹-->
+            <list event = "2" to_state = "111211" type = "1"/> <!--跳 -> 跑跳换弹-->
+            <list event = "22" to_state = "111013" type = "1"/> <!--切换 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="111111"> <!--跑下蹲换弹-->
+            <list event = "9" to_state = "111110" type = "1"/> <!--时间结束 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101111" type = "1"/> <!--移动结束 -> 静止下蹲换弹-->
+            <list event = "1" to_state = "111011" type = "1"/> <!--蹲 -> 跑站立换弹-->
+            <list event = "2" to_state = "111011" type = "1"/> <!--跳 -> 跑站立换弹-->
+            <list event = "22" to_state = "111113" type = "1"/> <!--切换 -> 跑下蹲切换-->
+        </from_state>
+        <from_state id ="121011"> <!--疾跑站立换弹-->
+            <list event = "9" to_state = "121010" type = "1"/> <!--时间结束 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "1" to_state = "101111" type = "1"/> <!--蹲 -> 静止下蹲换弹-->
+            <list event = "6" to_state = "111011" type = "1"/> <!--快速移动结束 -> 跑站立换弹-->
+            <list event = "2" to_state = "121211" type = "1"/> <!--跳 -> 疾跑跳换弹-->
+            <list event = "22" to_state = "121013" type = "1"/> <!--切换 -> 疾跑站立切换-->
+        </from_state>
+        <from_state id ="101210"> <!--静止跳手持-->
+            <list event = "20" to_state = "101010" type = "1"/> <!--落地 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "13" to_state = "101210" type = "1"/> <!--攻击 -> 静止跳手持-->
+            <list event = "21" to_state = "101211" type = "1"/> <!--换弹 -> 静止跳换弹-->
+            <list event = "22" to_state = "101213" type = "1"/> <!--切换 -> 静止跳切换-->
+            <list event = "3" to_state = "111210" type = "1"/> <!--移动 -> 跑跳手持-->
+        </from_state>
+        <from_state id ="101211"> <!--静止跳换弹-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "20" to_state = "101011" type = "1"/> <!--落地 -> 静止站立换弹-->
+            <list event = "9" to_state = "101210" type = "1"/> <!--时间结束 -> 静止跳手持-->
+            <list event = "3" to_state = "111211" type = "1"/> <!--移动 -> 跑跳换弹-->
+        </from_state>
+        <from_state id ="101213"> <!--静止跳切换-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "9" to_state = "101210" type = "1"/> <!--时间结束 -> 静止跳手持-->
+            <list event = "3" to_state = "111213" type = "1"/> <!--移动 -> 跑跳切换-->
+            <list event = "20" to_state = "101013" type = "1"/> <!--落地 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="111210"> <!--跑跳手持-->
+            <list event = "20" to_state = "111010" type = "1"/> <!--落地 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101210" type = "1"/> <!--移动结束 -> 静止跳手持-->
+            <list event = "13" to_state = "111210" type = "1"/> <!--攻击 -> 跑跳手持-->
+            <list event = "21" to_state = "111211" type = "1"/> <!--换弹 -> 跑跳换弹-->
+            <list event = "22" to_state = "111213" type = "1"/> <!--切换 -> 跑跳切换-->
+        </from_state>
+        <from_state id ="111211"> <!--跑跳换弹-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "20" to_state = "111011" type = "1"/> <!--落地 -> 跑站立换弹-->
+            <list event = "5" to_state = "101211" type = "1"/> <!--移动结束 -> 静止跳换弹-->
+            <list event = "9" to_state = "111210" type = "1"/> <!--时间结束 -> 跑跳手持-->
+        </from_state>
+        <from_state id ="111213"> <!--跑跳切换-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101213" type = "1"/> <!--移动结束 -> 静止跳切换-->
+            <list event = "9" to_state = "111210" type = "1"/> <!--时间结束 -> 跑跳手持-->
+        </from_state>
+        <from_state id ="121210"> <!--疾跑跳手持-->
+            <list event = "20" to_state = "121010" type = "1"/> <!--落地 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101210" type = "1"/> <!--移动结束 -> 静止跳手持-->
+            <list event = "6" to_state = "111210" type = "1"/> <!--快速移动结束 -> 跑跳手持-->
+            <list event = "13" to_state = "121210" type = "1"/> <!--攻击 -> 疾跑跳手持-->
+            <list event = "21" to_state = "121211" type = "1"/> <!--换弹 -> 疾跑跳换弹-->
+            <list event = "22" to_state = "121213" type = "1"/> <!--切换 -> 疾跑跳切换-->
+        </from_state>
+        <from_state id ="121211"> <!--疾跑跳换弹-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "20" to_state = "121011" type = "1"/> <!--落地 -> 疾跑站立换弹-->
+            <list event = "6" to_state = "101211" type = "1"/> <!--快速移动结束 -> 静止跳换弹-->
+            <list event = "9" to_state = "121210" type = "1"/> <!--时间结束 -> 疾跑跳手持-->
+        </from_state>
+        <from_state id ="121213"> <!--疾跑跳切换-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "6" to_state = "101213" type = "1"/> <!--快速移动结束 -> 静止跳切换-->
+            <list event = "9" to_state = "121210" type = "1"/> <!--时间结束 -> 疾跑跳手持-->
+        </from_state>
+        <from_state id ="101012"> <!--静止站立开镜-->
+            <list event = "24" to_state = "101010" type = "1"/> <!--开镜 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "8" to_state = "101016" type = "2"/> <!--救援 -> 静止站立救援-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101014" type = "1"/> <!--使用药品 -> 静止站立使用物品-->
+            <list event = "21" to_state = "101011" type = "1"/> <!--换弹 -> 静止站立换弹-->
+            <list event = "2" to_state = "101210" type = "1"/> <!--跳 -> 静止跳手持-->
+            <list event = "1" to_state = "101112" type = "1"/> <!--蹲 -> 静止下蹲开镜-->
+            <list event = "3" to_state = "111012" type = "1"/> <!--移动 -> 跑站立开镜-->
+            <list event = "22" to_state = "101013" type = "1"/> <!--切换 -> 静止站立切换-->
+        </from_state>
+        <from_state id ="101112"> <!--静止下蹲开镜-->
+            <list event = "24" to_state = "101110" type = "1"/> <!--开镜 -> 静止下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "8" to_state = "101116" type = "2"/> <!--救援 -> 静止下蹲救援-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101114" type = "1"/> <!--使用药品 -> 静止下蹲使用物品-->
+            <list event = "21" to_state = "101111" type = "1"/> <!--换弹 -> 静止下蹲换弹-->
+            <list event = "1" to_state = "101012" type = "1"/> <!--蹲 -> 静止站立开镜-->
+            <list event = "2" to_state = "101012" type = "1"/> <!--跳 -> 静止站立开镜-->
+            <list event = "3" to_state = "111112" type = "1"/> <!--移动 -> 跑下蹲开镜-->
+            <list event = "22" to_state = "101113" type = "1"/> <!--切换 -> 静止下蹲切换-->
+        </from_state>
+        <from_state id ="101212"> <!--静止跳开镜-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="111012"> <!--跑站立开镜-->
+            <list event = "24" to_state = "111010" type = "1"/> <!--开镜 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "21" to_state = "111011" type = "1"/> <!--换弹 -> 跑站立换弹-->
+            <list event = "2" to_state = "111210" type = "1"/> <!--跳 -> 跑跳手持-->
+            <list event = "5" to_state = "101012" type = "1"/> <!--移动结束 -> 静止站立开镜-->
+            <list event = "4" to_state = "121012" type = "1"/> <!--快速移动 -> 疾跑站立开镜-->
+            <list event = "22" to_state = "111013" type = "1"/> <!--切换 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="111112"> <!--跑下蹲开镜-->
+            <list event = "24" to_state = "111110" type = "1"/> <!--开镜 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "21" to_state = "111111" type = "1"/> <!--换弹 -> 跑下蹲换弹-->
+            <list event = "5" to_state = "101112" type = "1"/> <!--移动结束 -> 静止下蹲开镜-->
+            <list event = "1" to_state = "111012" type = "1"/> <!--蹲 -> 跑站立开镜-->
+            <list event = "2" to_state = "111012" type = "1"/> <!--跳 -> 跑站立开镜-->
+            <list event = "22" to_state = "111113" type = "1"/> <!--切换 -> 跑下蹲切换-->
+        </from_state>
+        <from_state id ="111212"> <!--跑跳开镜-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="121012"> <!--疾跑站立开镜-->
+            <list event = "24" to_state = "121010" type = "1"/> <!--开镜 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "21" to_state = "121011" type = "1"/> <!--换弹 -> 疾跑站立换弹-->
+            <list event = "2" to_state = "121210" type = "1"/> <!--跳 -> 疾跑跳手持-->
+            <list event = "5" to_state = "101012" type = "1"/> <!--移动结束 -> 静止站立开镜-->
+            <list event = "6" to_state = "111012" type = "1"/> <!--快速移动结束 -> 跑站立开镜-->
+            <list event = "22" to_state = "121013" type = "1"/> <!--切换 -> 疾跑站立切换-->
+        </from_state>
+        <from_state id ="121112"> <!--疾跑下蹲开镜-->
+            <list event = "24" to_state = "111110" type = "1"/> <!--开镜 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "6" to_state = "101112" type = "1"/> <!--快速移动结束 -> 静止下蹲开镜-->
+        </from_state>
+        <from_state id ="121212"> <!--疾跑跳开镜-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+        <from_state id ="101013"> <!--静止站立切换-->
+            <list event = "9" to_state = "101010" type = "1"/> <!--时间结束 -> 静止站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101014" type = "1"/> <!--使用药品 -> 静止站立使用物品-->
+            <list event = "2" to_state = "101213" type = "1"/> <!--跳 -> 静止跳切换-->
+            <list event = "1" to_state = "101113" type = "1"/> <!--蹲 -> 静止下蹲切换-->
+            <list event = "3" to_state = "111013" type = "1"/> <!--移动 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="101113"> <!--静止下蹲切换-->
+            <list event = "9" to_state = "101110" type = "1"/> <!--时间结束 -> 静止下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "16" to_state = "101114" type = "1"/> <!--使用药品 -> 静止下蹲使用物品-->
+            <list event = "1" to_state = "101013" type = "1"/> <!--蹲 -> 静止站立切换-->
+            <list event = "2" to_state = "101013" type = "1"/> <!--跳 -> 静止站立切换-->
+            <list event = "3" to_state = "111113" type = "1"/> <!--移动 -> 跑下蹲切换-->
+        </from_state>
+        <from_state id ="111013"> <!--跑站立切换-->
+            <list event = "9" to_state = "111010" type = "1"/> <!--时间结束 -> 跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "2" to_state = "111213" type = "1"/> <!--跳 -> 跑跳切换-->
+            <list event = "5" to_state = "101013" type = "1"/> <!--移动结束 -> 静止站立切换-->
+            <list event = "4" to_state = "121013" type = "1"/> <!--快速移动 -> 疾跑站立切换-->
+        </from_state>
+        <from_state id ="111113"> <!--跑下蹲切换-->
+            <list event = "9" to_state = "111110" type = "1"/> <!--时间结束 -> 跑下蹲手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "5" to_state = "101113" type = "1"/> <!--移动结束 -> 静止下蹲切换-->
+            <list event = "1" to_state = "111013" type = "1"/> <!--蹲 -> 跑站立切换-->
+            <list event = "2" to_state = "111013" type = "1"/> <!--跳 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="121013"> <!--疾跑站立切换-->
+            <list event = "9" to_state = "121010" type = "1"/> <!--时间结束 -> 疾跑站立手持-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+            <list event = "2" to_state = "121213" type = "1"/> <!--跳 -> 疾跑跳切换-->
+            <list event = "5" to_state = "101013" type = "1"/> <!--移动结束 -> 静止站立切换-->
+            <list event = "6" to_state = "111013" type = "1"/> <!--快速移动结束 -> 跑站立切换-->
+        </from_state>
+        <from_state id ="121113"> <!--疾跑下蹲切换-->
+            <list event = "12" to_state = "101710" type = "2"/> <!--死亡 -> 静止死亡手持-->
+            <list event = "7" to_state = "101810" type = "2"/> <!--空血 -> 静止濒死手持-->
+            <list event = "17" to_state = "101910" type = "1"/> <!--游戏开始 -> 静止坐飞机手持-->
+        </from_state>
+    </state>
+    <special_event>
+        <rescue_event id = "8"/>
+    </special_event>
+</root>
